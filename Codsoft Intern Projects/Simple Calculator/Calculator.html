@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 10em;
+            background-color:bisque;
+            border:5px solid rgb(0, 0, 0);
+
+        }
+
+        #display{
+            background-color: rgb(211, 206, 206);
+        }
+
+        #plus{
+            color: black;
+            background-color: rgb(0, 0, 0);
+        }
+
+        #minus{
+            color: black;
+            background-color: rgb(0, 0, 0);
+        }
+
+        #multi{
+            color:black;
+            background-color: rgb(0, 0, 0);
+        }
+
+        #div{
+            color:black;
+            background-color: rgb(0, 0, 0);
+        }
+
+        #per{
+            color:black;
+            background-color: rgb(0, 0, 0);
+        }
+
+        #clear{
+            color:black;
+            background-color: rgb(0, 0, 0);
+            
+        }
+        
+        #ans{
+            color:black;
+            background-color: rgb(0, 0, 0);
+            
+
+        }
+
+        input[type="text"] {
+            width: 15em;
+            height: 30px;
+            font-size: 22px;
+            text-align: right;
+        }
+
+        input[type="button"] {
+            width: 70px;
+            height: 40px;
+            font-size: 18px ;
+            margin:4px 
+            
+        }
+    </style>
+</head>
+<body>
+
+    <h2><b><u>CALCULATOR</u></b></h2>
+
+    <input type="text" id="display" disabled>
+
+    <br>
+
+    <input type="button" value="1" onclick="appendToDisplay('1')">
+    <input type="button" value="2" onclick="appendToDisplay('2')">
+    <input type="button" value="3" onclick="appendToDisplay('3')">
+    <span id="plus">
+    <input type="button" value="+" onclick="appendToDisplay('+')"></span>
+
+    <br>
+    <input type="button" value="4" onclick="appendToDisplay('4')">
+    <input type="button" value="5" onclick="appendToDisplay('5')">
+    <input type="button" value="6" onclick="appendToDisplay('6')">
+    <span id="minus">
+    <input type="button" value="-" onclick="appendToDisplay('-')"></span>
+
+    <br>
+    <input type="button" value="7" onclick="appendToDisplay('7')">
+    <input type="button" value="8" onclick="appendToDisplay('8')">
+    <input type="button" value="9" onclick="appendToDisplay('9')">
+    <span id="multi">
+    <input type="button" value="*" onclick="appendToDisplay('*')"></span>
+ 
+    <br> 
+    <input type="button" value="0" onclick="appendToDisplay('0')">
+    <input type="button" value="." onclick="appendToDisplay('.')">
+
+    <span id="per">
+    <input type="button" value="%" onclick="appendToDisplay('%')"></span>
+
+    <span id="div">
+    <input type="button" value="/" onclick="appendToDisplay('/')"></span>
+    
+    
+   
+    <br>
+    <span id="clear">
+    <input type="button" value="C" onclick="clearDisplay()"></span>
+
+  <span id="ans">
+  <input type="button" value="=" onclick="calculateResult()"></span>
+  
+
+
+    <script>
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function calculateResult() {
+            try {
+                document.getElementById('display').value = eval(document.getElementById('display').value);
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+        }
+    </script>
+
+</body>
+</html>
